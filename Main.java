@@ -1,13 +1,17 @@
 import java.util.Arrays;
-import java.util.Objects;
 
 class Main {
 
-  // 0 PATH 1 RIGHT PATH 2 BORDER 3 THE PATH IT TRIED
-    final static int TRIED = 3;
+    /*
+    0= PATH
+    1 = RIGHT PATH
+    2 = BORDER
+    */
     final static int PATH = 1;
     final static int BORDER = 2;
 
+
+    
     private static int[][] GRID = { 
         { 0, 0, 0, 2, 0, 0, 0 },
         { 0, 0, 0, 2, 0, 0, 0 },
@@ -56,7 +60,7 @@ class Main {
             map[i][j] = PATH;
             return true;
         } else {
-            map[i][j] = TRIED;
+            map[i][j] = 3;
         }
 
 
@@ -134,7 +138,7 @@ class Main {
     }
 
     private boolean isTried(int i, int j) {
-        return map[i][j] == TRIED;
+        return map[i][j] == 3;
     }
 
     private boolean inRange(int i, int j) {
