@@ -9,8 +9,6 @@ class Main {
     */
     final static int PATH = 1;
     final static int BORDER = 2;
-
-
     
     private static int[][] GRID = { 
         { 0, 0, 0, 2, 0, 0, 0 },
@@ -63,7 +61,6 @@ class Main {
             map[i][j] = 3;
         }
 
-
         
         // East
         if (traverse(i, j + 1)) {
@@ -82,6 +79,7 @@ class Main {
             map[i + 1][j] = PATH;
             return true;
         }
+
         // West
         if (traverse(i, j - 1)) {
             map[i][j - 1] = PATH;
@@ -90,7 +88,6 @@ class Main {
 
         RemoveTried(i, j);
         
-
         return false;
     }
 
@@ -158,8 +155,7 @@ class Main {
         for (int[] row : map) {
             s += Arrays.toString(row) + "\n";
         }
-
+        
         return s;
     }
-
 }
